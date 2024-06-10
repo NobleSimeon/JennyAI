@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Using Alpline Js for the interactivity -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <nav
+      class="fixed top-0 z-50 w-full bg-white shadow-lg"
+      x-data="{ isOpen: false }"
+    >
+      <div class="max-w-6xl px-4 mx-auto">
+        <div class="flex justify-between">
+          <div>
+            <!-- Website Logo -->
+            <a href="#" class="flex items-center px-2 py-4">
+              <span class="text-lg font-semibold text-gray-500">jenni</span>
+            </a>
+          </div>
+          <!-- Primary Navbar items -->
+          <div class="items-center hidden md:flex">
+            <ul class="flex items-center space-x-3" role="menubar">
+              <li>
+                <a
+                  href="#"
+                  class="px-2 py-4 font-semibold text-gray-500"
+                  role="menuitem"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-2 py-4 font-semibold text-gray-500"
+                  role="menuitem"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-2 py-4 font-semibold text-gray-500"
+                  role="menuitem"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Secondary Navbar Items -->
+          <div class="items-center hidden md:flex">
+            <ul class="flex items-center space-x-3" role="menubar">
+              <li>
+                <a
+                  href="#"
+                  class="hidden px-2 py-4 font-semibold text-gray-500 lg:block"
+                  role="menuitem"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400"
+                  role="menuitem"
+                  >Start Writing</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="flex items-center gap-3 md:hidden">
+            <a
+              href="#"
+              id="sign-up"
+              x-show="!isOpen"
+              class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400"
+              >Sign Up</a
+            >
+            <button
+              class="outline-none mobile-menu-button"
+              aria-label="Open menu"
+              @click="isOpen = !isOpen"
+              :aria-expanded="isOpen.toString()"
+              aria-controls="mobile-menu"
+            >
+              <span class="sr-only">Menu Button</span>
+              <svg
+                class="block w-6 h-6 text-gray-500 hover:text-gray-400"
+                id="menu-icon"
+                fill="none"
+                x-show="!isOpen"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+              <svg
+                class="w-6 h-6 text-gray-500 hover:text-gray-400"
+                id="close-icon"
+                fill="none"
+                x-show="isOpen"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div
+        class="grid w-full px-4 overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+        id="mobile-menu"
+        :aria-hidden="isOpen? 'false' : 'true'"
+        :class="isOpen? 'grid-rows-[1fr] opacity-100 py-4' : 'grid-rows-[0fr] opacity-0'"
+      >
+        <ul class="w-full overflow-hidden text-center">
+          <li>
+            <a
+              href="#"
+              class="block px-2 py-4 text-base font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400"
+              role="menuitem"
+              >Start Writing</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-2 py-4 text-base font-semibold text-gray-700 hover:bg-gray-200"
+              role="menuitem"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-2 py-4 text-base text-gray-700 hover:bg-gray-200"
+              role="menuitem"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-2 py-4 text-base text-gray-700 hover:bg-gray-200"
+              role="menuitem"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-2 py-4 text-base text-gray-700 hover:bg-gray-200"
+              role="menuitem"
+              >Blog</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section
+      class="flex flex-col items-center justify-center min-h-screen px-4 py-12 mx-auto bg-white md:px-8 md:py-16"
+    >
+      <div
+        class="max-w-6xl px-4 py-[5rem] mx-auto text-center md:px-8 md:py-[7rem] md:pb-12"
+      >
+        <h1 class="mb-4 text-5xl font-bold md:text-6xl lg:text-7xl">
+          Supercharge Your Next Research Paper
+        </h1>
+        <p class="max-w-3xl mx-auto mb-6 text-xl text-gray-600 md:text-2xl">
+          Jenni's AI-powered text editor helps you write, edit, and cite with
+          confidence. Save hours on your next paper.
+        </p>
+        <a
+          href="#"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+        >
+          Start writing - it's free
+        </a>
+        <div class="flex items-center justify-center mt-4 space-x-8">
+          <div class="avatars">
+            <div class="w-10 h-10">
+              <img
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Random Avatar"
+                class="border-2 border-white rounded-full shadow-lg"
+              />
+            </div>
+            <div class="w-10 h-10">
+              <img
+                src="https://i.pravatar.cc/150?img=2"
+                alt="Random Avatar"
+                class="border-2 border-white rounded-full shadow-lg"
+              />
+            </div>
+            <div class="w-10 h-10">
+              <img
+                src="https://i.pravatar.cc/150?img=3"
+                alt="Random Avatar"
+                class="border-2 border-white rounded-full shadow-lg"
+              />
+            </div>
+          </div>
+
+          <p class="text-sm text-left text-gray-500 md:text-base">
+            Loved by over 3 million academics
+          </p>
+        </div>
+      </div>
+      <div class="max-w-6xl mx-auto">
+        <div class="relative w-full overflow-hidden">
+          <video
+            class="object-cover w-full h-full"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <!-- 'src' attribute should point to your video file. 'muted' and 'autoplay' attributes are required for autoplay in most browsers. -->
+            <source src="Jenny Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-12 bg-white md:px-8 md:py-16">
+      <p
+        id="trustees"
+        class="mb-6 text-lg text-center text-gray-600 md:text-xl"
+      >
+        Trusted by Universities and businesses across the world
+      </p>
+      <!-- <div
+        class="marquee"
+        aria-live="off"
+        role="marquee"
+        aria-labelledby="trustees"
+      >
+        <img
+          decoding="async"
+          sizes="132.5px"
+          srcset="
+            https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png?scale-down-to=512 512w,
+            https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png                   600w
+          "
+          src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
+          alt="google logo"
+          style="
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-position: center;
+            object-fit: cover;
+            image-rendering: auto;
+          "
+        />
+        <img
+          decoding="async"
+          sizes="145.1497px"
+          srcset="
+            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png?scale-down-to=512   512w,
+            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png?scale-down-to=1024 1024w,
+            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png                    1600w
+          "
+          src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
+          alt="penn logo"
+          style="
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-position: center;
+            object-fit: cover;
+            image-rendering: auto;
+          "
+        />
+        <img
+          decoding="async"
+          sizes="190px"
+          srcset="
+            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=512   512w,
+            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=1024 1024w,
+            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=2048 2048w,
+            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png                    3000w
+          "
+          src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=2048"
+          alt="cambridge university"
+          style="
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-position: center;
+            object-fit: cover;
+            image-rendering: auto;
+          "
+        />
+        <img
+          decoding="async"
+          sizes="77px"
+          srcset="
+            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=512   512w,
+            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=1024 1024w,
+            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png                    1280w
+          "
+          src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=1024"
+          alt="MIT logo"
+          style="
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-position: center;
+            object-fit: cover;
+            image-rendering: auto;
+          "
+        />
+        <img
+          decoding="async"
+          sizes="153px"
+          srcset="
+            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png?scale-down-to=512   512w,
+            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png?scale-down-to=1024 1024w,
+            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png                    1258w
+          "
+          src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
+          alt="aston university logo"
+          style="
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-position: center;
+            object-fit: cover;
+            image-rendering: auto;
+          "
+        />
+        <div
+          class="marquee-content"
+          aria-label="Trusted by universities and businesses across the world"
+        >
+          // Repeat the sequence of images twice to ensure a smooth looping 
+          <img
+            src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
+            alt="google logo"
+            class="filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
+            alt="penn logo"
+            class="filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png"
+            alt="cambridge university"
+            class="filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png"
+            alt="MIT logo"
+            class="filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
+            alt="aston university logo"
+            class="filter grayscale"
+          />
+          // Repeat start 
+          <img
+            src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
+            alt="google logo"
+            class="filter grayscale"
+            aria-hidden="true"
+          />
+          <img
+            src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
+            alt="penn logo"
+            class="filter grayscale"
+            aria-hidden="true"
+          />
+          <img
+            src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png"
+            alt="cambridge university"
+            class="filter grayscale"
+            aria-hidden="true"
+          />
+          <img
+            src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png"
+            alt="MIT logo"
+            class="filter grayscale"
+            aria-hidden="true"
+          />
+          <img
+            src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
+            alt="aston university logo"
+            class="filter grayscale"
+            aria-hidden="true"
+          />
+          //Repeat end 
+        </div>
+      </div> -->
+      <div
+        class="scroller | w-full 2xl:max-w-6xl px-4 mx-auto text-center md:px-8"
+        data-speed="fast"
+        role="marquee"
+        aria-labelledby="trustees"
+        data-animated="true"
+      >
+        <div class="scroller__inner | py-4 flex flex-wrap gap-8 lg:gap-16">
+          <img
+            src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
+            alt="google logo"
+            class="h-10 lg:h-14 filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
+            alt="penn logo"
+            class="h-10 lg:h-14 filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png"
+            alt="cambridge university"
+            class="h-10 lg:h-14 filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png"
+            alt="MIT logo"
+            class="h-10 lg:h-14 filter grayscale"
+          />
+          <img
+            src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
+            alt="aston university logo"
+            class="h-10 lg:h-14 filter grayscale"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          Powerful Features
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+          Write, cite, and edit
+        </h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Features built to enhance your research and writing capabilities
+        </p>
+      </header>
+
+      <div class="max-w-6xl mx-auto">
+        <!-- Features Grid -->
+        <div
+          class="grid grid-cols-1 gap-8 divide-y divide-gray-200 md:grid-cols-2"
+        >
+          <!-- Feature 1 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">In-text Citations</h2>
+            <p class="text-gray-200">
+              Jenni consults the latest research and your PDF uploads. Cite in
+              APA, MLA, IEEE, Chicago, or Harvard style
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">AI Autocomplete</h2>
+            <p class="text-gray-200">
+              Autocomplete will write alongside you to beat writer's block
+              whenever you need a helping hand
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Chat to Your Research</h2>
+            <p class="text-gray-200">
+              Quickly understand and summarize your research papers with our AI
+              chat assistant
+            </p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Generate From Your Files</h2>
+            <p class="text-gray-200">
+              Bring your research papers to life with source-based generation
+            </p>
+          </div>
+          <!-- Feature 5 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Paraphrase & Rewrite</h2>
+            <p class="text-gray-200">
+              Paraphrase any text in any tone. Rewrite the internet customized
+              to you
+            </p>
+          </div>
+          <!-- Feature 6 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Bulk Import Sources via .bib</h2>
+            <p class="text-gray-200">
+              Already saved papers ready to cite? Import a .bib to populate your
+              library in seconds
+            </p>
+          </div>
+          <!-- Feature 7 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">LaTeX and Word Export</h2>
+            <p class="text-gray-200">
+              Export your draft to LaTeX, .docx, or HTML without any formatting
+              loss
+            </p>
+          </div>
+          <!-- Feature 7 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Outline Builder</h2>
+            <p class="text-gray-200">
+              Enter your prompt and get a list of section headings ready for you
+              to flesh out
+            </p>
+          </div>
+          <!-- Feature 8 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Multilingual Support</h2>
+            <p class="text-gray-200">
+              Jenni can generate in US or British English, Spanish, German,
+              French, or Chinese
+            </p>
+          </div>
+          <!-- Feature 9 -->
+          <div class="py-4">
+            <h2 class="mb-2 text-lg font-bold">Research Library</h2>
+            <p class="text-gray-200">
+              Save and manage research in your library. Easily cite research in
+              any document, fast
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          AI ASSISTANT
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">Never Write Alone</h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Get suggestions whenever you are stuck or expand your notes into full
+          paragraphs
+        </p>
+        <a
+          href="#"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+        >
+          Start writing - it's free
+        </a>
+      </header>
+
+      <figure class="max-w-6xl mx-auto overflow-hidden h-[220px]">
+        <img src="./img/section-img.avif" alt="" />
+      </figure>
+    </section>
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          CUSTOMER LOVE
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+          Join 3 million empowered writers
+        </h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Jenni has helped write over 970 million words. From academic essays,
+          journals, to top-ranking blog posts
+        </p>
+      </header>
+      <div
+        class="grid max-w-6xl grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3"
+      >
+        <div class="">
+          <!-- First Testimonial Card -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=3"
+                alt="Owdy"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Owdy (@Hadeel_Naily)</p>
+                  <p class="text-xs text-gray-500">16 Jan</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "A major shoutout to Jenni AI for straight up saving my life ❤"
+              </p>
+            </div>
+          </div>
+
+          <!-- Second Testimonial Card -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=2"
+                alt="Rosh"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Rosh (@sonofgorkhali)</p>
+                  <p class="text-xs text-gray-500">23 Aug</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "I started with Jenni-who & Jenni-what. But now I can't write
+                without Jenni. I love Jenni AI and am amazed to see how far
+                Jenni has come. Kudos to Jenni.AI team."
+              </p>
+            </div>
+          </div>
+
+          <!-- Third Testimonial Card -->
+          <div
+            class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=1"
+                alt="Mushtaq"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Mushtaq (@Mushtaq Bilal)</p>
+                  <p class="text-xs text-gray-500">25 Mar</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "Jenni, the AI assistant for academic writing, just got BETTER
+                and SMARTER."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <!-- First Testimonial Card in Column 2 -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=5"
+                alt="Gachoki"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Gachoki (@gachoki_munene)</p>
+                  <p class="text-xs text-gray-500">1 Aug</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "This one is a game changer, Doc, especially on that small
+                matter of lacking words or writer's block. I am definitely
+                introducing it to my students asap."
+              </p>
+            </div>
+          </div>
+
+          <!-- Second Testimonial Card in Column 2 -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=6"
+                alt="Andy Tom"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">
+                    Andy Tom (@angrytomtweets)
+                  </p>
+                  <p class="text-xs text-gray-500">18 Oct</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "I thought ChatGPT was a good writing assistant. But when I
+                found Jenni AI - It blew my mind. It's 10x more advanced than I
+                thought."
+              </p>
+            </div>
+          </div>
+
+          <!-- Third Testimonial Card in Column 2 -->
+          <div
+            class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=7"
+                alt="Hason Toor"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Hason Toor (@hasantoxr)</p>
+                  <p class="text-xs text-gray-500">26 Aug</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "I thought AI writing was useless. Then I found Jenni AI. It
+                turned out to be much more advanced than I ever could have
+                imagined. Jenni AI = ChatGPT x 10."
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden md:block">
+          <!-- First Testimonial Card in Column 3 -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=8"
+                alt="Oscar Duran"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">
+                    Oscar Duran (@duranoscarf)
+                  </p>
+                  <p class="text-xs text-gray-500">30 Jul</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "Herramienta de auto completado de textos. Usando inteligencia
+                artificial te permite escribir de manera rápida y más eficiente
+                (hay que revisar igual)."
+              </p>
+            </div>
+          </div>
+
+          <!-- Second Testimonial Card in Column 3 -->
+          <div
+            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=9"
+                alt="Rahul"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Rahul (@sairahul1)</p>
+                  <p class="text-xs text-gray-500">28 Jul</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>
+                "Jenni is perfect for writing research docs, SOPs, study
+                projects presentations 👌"
+              </p>
+            </div>
+          </div>
+
+          <!-- Third Testimonial Card in Column 3 -->
+          <div
+            class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
+          >
+            <figure class="w-12 h-12 rounded-full">
+              <!-- Avatar -->
+              <img
+                src="https://i.pravatar.cc/150?img=10"
+                alt="Xavier"
+                class="object-cover w-full h-full rounded-full"
+              />
+            </figure>
+            <div>
+              <div class="flex items-center justify-between mb-2">
+                <!-- User Info -->
+                <div class="flex items-center gap-4">
+                  <p class="text-sm font-semibold">Xavier (@xaviercaffrey13)</p>
+                  <p class="text-xs text-gray-500">19 Aug</p>
+                </div>
+                <!-- Twitter Logo SVG Here -->
+                <svg
+                  class="w-6 h-6 twitter-logo"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <!-- Twitter SVG code -->
+                  <path
+                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                    fill="#1DA1F2"
+                  />
+                </svg>
+              </div>
+              <p>"Copayi is alright but have you tried @whoisjenniai?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="px-6 py-12 bg-blue-900 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          FOR TEAMS
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+          Team & institutional plans
+        </h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Collaborate with your research team and speed up your workflow.
+        </p>
+        <a
+          href="#"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500"
+        >
+          Learn More
+        </a>
+      </header>
+    </section>
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          USE CASES
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">You're in control</h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Types of content Jenni can help you with
+        </p>
+      </header>
+      <div
+        class="grid max-w-6xl grid-cols-1 gap-2 mx-auto sm:grid-cols-2 md:grid-cols-3"
+      >
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Example icon from Heroicons https://heroicons.com/ -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </div>
+
+          <h4 class="text-lg font-semibold">Essays</h4>
+          <p class="text-gray-500">
+            Save hours writing your essay with our AI essay writing tool.
+          </p>
+        </div>
+
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Example icon from Heroicons https://heroicons.com/ -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8 5v14l11-7L8 5z"
+              />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold">Literature reviews</h4>
+          <p class="text-gray-500">
+            Discover, write, and cite relevant research.
+          </p>
+        </div>
+        <!-- Research Papers Card -->
+
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Icon placeholder -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 6v12m6-6H6"
+              />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold">Research Papers</h4>
+          <p class="text-gray-500">
+            Polish your writing to increase submission success.
+          </p>
+        </div>
+
+        <!-- Personal Statements Card -->
+
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Icon placeholder -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4v16m8-8H4"
+              />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold">Personal Statements</h4>
+          <p class="text-gray-500">
+            Create a compelling college motivation letter.
+          </p>
+        </div>
+
+        <!-- Blog Posts Card -->
+
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Icon placeholder -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"
+              />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold">Blog Posts</h4>
+          <p class="text-gray-500">
+            Write blogs & articles faster with the help of AI.
+          </p>
+        </div>
+
+        <!-- Speeches Card -->
+
+        <div class="grid gap-2 p-4 bg-white place-items-start">
+          <div class="p-2 bg-blue-100 rounded-full">
+            <!-- Icon placeholder -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-blue-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 8c2.28 0 4-1.79 4-4S14.28 0 12 0 8 1.79 8 4s1.72 4 4 4zm0 2c-2.28 0-4 1.79-4 4s1.72 4 4 4 4-1.79 4-4-1.72-4-4-4zm0 10c-2.28 0-4 1.79-4 4s1.72 4 4 4 4-1.79 4-4-1.72-4-4-4z"
+              />
+            </svg>
+          </div>
+          <h4 class="text-lg font-semibold">Speeches</h4>
+          <p class="text-gray-500">
+            Write your next compelling speech in less time.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
+          SUPPORT
+        </p>
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+          Frequently asked questions
+        </h1>
+      </header>
+      <main
+        class="relative grid max-w-6xl gap-4 p-4 mx-auto overflow-hidden bg-slate-50"
+      >
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-01"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-01"
+            >
+              <span>What are the advantages of your service?</span>
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-01"
+            role="region"
+            aria-labelledby="faqs-title-01"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-02"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-02"
+            >
+              <span
+                >Are there any fees or commissions in addition to the monthly
+                subscription?</span
+              >
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-02"
+            role="region"
+            aria-labelledby="faqs-title-02"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-03"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-03"
+            >
+              <span>You really don't charge per user? Why not?</span>
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-03"
+            role="region"
+            aria-labelledby="faqs-title-03"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-04"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-04"
+            >
+              <span>What happens when I go over my monthly active limit?</span>
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-04"
+            role="region"
+            aria-labelledby="faqs-title-04"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-05"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-05"
+            >
+              <span
+                >Can your service help me understand how to work with my
+                product?</span
+              >
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-05"
+            role="region"
+            aria-labelledby="faqs-title-05"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-06"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-06"
+            >
+              <span>Which third-party application do you integrate with?</span>
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-06"
+            role="region"
+            aria-labelledby="faqs-title-06"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion item -->
+        <div
+          x-data="{ expanded: false }"
+          class="p-4 bg-white rounded-lg shadow-md"
+        >
+          <h2>
+            <button
+              id="faqs-title-07"
+              type="button"
+              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              @click="expanded = !expanded"
+              :aria-expanded="expanded"
+              aria-controls="faqs-text-07"
+            >
+              <span>I have another question!</span>
+              <svg
+                class="ml-8 fill-indigo-500 shrink-0"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform"
+                  :class="{'!rotate-180': expanded}"
+                />
+                <rect
+                  y="7"
+                  width="16"
+                  height="2"
+                  rx="1"
+                  class="transition duration-200 ease-out origin-center transform rotate-90"
+                  :class="{'!rotate-180': expanded}"
+                />
+              </svg>
+            </button>
+          </h2>
+          <div
+            id="faqs-text-07"
+            role="region"
+            aria-labelledby="faqs-title-07"
+            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
+            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
+          >
+            <div class="overflow-hidden">
+              <p class="pb-3">
+                If you go over your organisations or user limit, a member of the
+                team will reach out about bespoke pricing. In the meantime, our
+                collaborative features won't appear in accounts or users that
+                are over the 100-account or 1,000-user limit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
+      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+          Try Jenni for free today
+        </h1>
+        <p class="mt-2 text-lg text-gray-600">
+          Write your first paper with Jenni today and never look back
+        </p>
+        <a
+          href="#"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+        >
+          Start writing - it's free
+        </a>
+      </header>
+    </section>
+    <footer class="p-10">
+      <div class="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
+        <div>
+          <h2 class="mb-4 text-lg font-bold">jenni</h2>
+          <p>Supercharge your next research paper</p>
+          <button
+            class="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+          >
+            Start writing
+          </button>
+        </div>
+        <div>
+          <h3 class="mb-3 text-sm font-semibold uppercase">Use Cases</h3>
+          <ul class="space-y-2">
+            <li>Team Plans</li>
+            <li>AI Essay Writer</li>
+            <li>Essay Expander</li>
+            <li>Sentence & Paragraph Expansion</li>
+            <li>AI Essay Outline Generation</li>
+            <li>AI Summarizer</li>
+            <li>Paragraph Generator</li>
+            <li>For Researchers</li>
+            <li>Paraphrasing Tool</li>
+            <li>Literature Review Generator</li>
+            <li>Thesis Statement Generator</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-3 text-sm font-semibold uppercase">Company</h3>
+          <ul class="space-y-2">
+            <li>Careers</li>
+            <li>Influencer program</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-3 text-sm font-semibold uppercase">Legal</h3>
+          <ul class="space-y-2">
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>Refund Policy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 text-center text-gray-400">
+        <p>Copyright © 2024 Altum Inc. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
