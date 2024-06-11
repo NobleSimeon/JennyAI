@@ -28,7 +28,7 @@
       class="fixed top-0 z-50 w-full bg-white shadow-lg"
       x-data="{ isOpen: false }"
     >
-      <div class="max-w-6xl px-4 mx-auto">
+      <div class="max-w-5xl px-4 mx-auto">
         <div class="flex justify-between">
           <div>
             <!-- Website Logo -->
@@ -37,7 +37,7 @@
             </a>
           </div>
           <!-- Primary Navbar items -->
-          <div class="items-center hidden md:flex">
+          <div class="items-center hidden sm:flex">
             <ul class="flex items-center space-x-3" role="menubar">
               <li>
                 <a
@@ -66,33 +66,26 @@
             </ul>
           </div>
           <!-- Secondary Navbar Items -->
-          <div class="items-center hidden md:flex">
+          <div class="items-center hidden sm:flex">
             <ul class="flex items-center space-x-3" role="menubar">
               <li>
                 <a
                   href="#"
-                  class="hidden px-2 py-4 font-medium text-gray-500 lg:block"
+                  class="hidden px-2 py-4 font-medium text-gray-500 md:block"
                   role="menuitem"
                   >Login</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400"
-                  role="menuitem"
+                <a href="#" class="text-base button" role="menuitem"
                   >Start Writing</a
                 >
               </li>
             </ul>
           </div>
           <!-- Mobile menu button -->
-          <div class="flex items-center gap-3 md:hidden">
-            <a
-              href="#"
-              id="sign-up"
-              x-show="!isOpen"
-              class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400"
+          <div class="flex items-center gap-3 sm:hidden">
+            <a href="#" id="sign-up" x-show="!isOpen" class="text-base button"
               >Sign Up</a
             >
             <button
@@ -184,11 +177,12 @@
         </ul>
       </div>
     </nav>
+    <!-- Supercharge your next reasearch paper -->
     <section
       class="flex flex-col items-center justify-center min-h-screen px-4 py-12 mx-auto bg-white md:px-8 md:py-16"
     >
       <div
-        class="max-w-6xl px-4 py-[5rem] mx-auto text-center md:px-8 md:py-[7rem] md:pb-12"
+        class="max-w-5xl px-4 py-[5rem] mx-auto text-center md:px-8 md:py-[7rem] md:pb-12"
       >
         <h1
           class="mb-6 max-w-4xl mx-auto text-[3.5rem] leading-[61.6px] font-garamond md:text-6xl lg:text-[8ch]"
@@ -201,7 +195,7 @@
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block button ring-2 ring-blue-600 hover:ring-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
           Start writing <span>- it's free</span>
         </a>
@@ -235,7 +229,7 @@
           </p>
         </div>
       </div>
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <div class="relative w-full overflow-hidden">
           <video
             class="object-cover w-full h-full"
@@ -252,6 +246,7 @@
       </div>
     </section>
 
+    <!-- Trusted by UNiversities and businesses across  -->
     <section class="px-6 py-12 bg-white md:px-8 md:py-16">
       <p
         id="trustees"
@@ -260,7 +255,7 @@
         Trusted by Universities and businesses across the world
       </p>
       <div
-        class="scroller | w-full 2xl:max-w-6xl px-4 mx-auto text-center md:px-8"
+        class="scroller | w-full 2xl:max-w-5xl px-4 mx-auto text-center md:px-8"
         data-speed="fast"
         role="marquee"
         aria-labelledby="trustees"
@@ -296,6 +291,7 @@
       </div>
     </section>
 
+    <!-- Write, cite and edit -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
@@ -309,7 +305,7 @@
         </p>
       </header>
 
-      <div class="max-w-6xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <!-- Features Grid -->
         <div
           class="grid grid-cols-1 gap-8 divide-y divide-gray-200 md:grid-cols-2"
@@ -400,6 +396,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Never write Alone -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header
         class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
@@ -416,16 +414,18 @@
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 mt-4 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block mt-4 button ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
           Start writing <span>- it's free</span>
         </a>
       </header>
 
-      <figure class="max-w-6xl mx-auto overflow-hidden h-[220px]">
+      <figure class="max-w-5xl mx-auto overflow-hidden h-[220px]">
         <img src="./img/section-img.avif" alt="" />
       </figure>
     </section>
+
+    <!-- Join 3 million empowered  -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
@@ -440,147 +440,139 @@
         </p>
       </header>
       <div
-        class="grid max-w-6xl grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3"
+        class="grid max-w-5xl grid-cols-1 gap-4 mx-auto sm:grid-cols-2 lg:grid-cols-3"
       >
-        <div class="">
+        <div class="text-xs">
           <!-- First Testimonial Card -->
-          <article
-            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
-          >
-            <figure class="w-12 h-12 rounded-full">
+          <article class="p-4 mb-4 bg-white rounded-lg shadow-lg">
+            <figure class="grid grid-cols-[auto_1fr] gap-4">
               <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=3"
                 alt="Owdy"
-                class="object-cover w-full h-full rounded-full"
+                class="object-cover w-12 h-12 rounded-full"
               />
-            </figure>
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Owdy (@Hadeel_Naily)</p>
-                  <p class="text-xs text-gray-500">16 Jan</p>
+              <figcaption>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <p class="text-xs font-medium">Owdy</p>
+                    <p class="text-gray-500">@Hadeel_Naily . 16 Jan</p>
+                  </div>
+                  <!-- Twitter Logo SVG Here -->
+                  <svg
+                    class="w-4 h-4 twitter-logo"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Twitter SVG code -->
+                    <path
+                      d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                      fill="#1DA1F2"
+                    />
+                  </svg>
                 </div>
-                <!-- Twitter Logo SVG Here -->
-                <svg
-                  class="w-6 h-6 twitter-logo"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <!-- Twitter SVG code -->
-                  <path
-                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
-                    fill="#1DA1F2"
-                  />
-                </svg>
-              </div>
-              <p>
-                "A major shoutout to Jenni AI for straight up saving my life ❤"
-              </p>
-            </div>
+                <p class="text-sm">
+                  "A major shoutout to Jenni AI for straight up saving my life
+                  ❤"
+                </p>
+              </figcaption>
+            </figure>
           </article>
 
           <!-- Second Testimonial Card -->
-          <article
-            class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
-          >
-            <figure class="w-12 h-12 rounded-full">
+          <article class="p-4 mb-4 bg-white rounded-lg shadow-lg">
+            <figure class="grid grid-cols-[auto_1fr] gap-4">
               <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=2"
                 alt="Rosh"
-                class="object-cover w-full h-full rounded-full"
+                class="object-cover w-12 h-12 rounded-full"
               />
-            </figure>
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Rosh (@sonofgorkhali)</p>
-                  <p class="text-xs text-gray-500">23 Aug</p>
+              <figcaption>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <p class="text-xs font-medium">Rosh ASD</p>
+                    <p class="text-gray-500">@sonofgorkhali . 23 Aug</p>
+                  </div>
+                  <!-- Twitter Logo SVG Here -->
+                  <svg
+                    class="w-4 h-4 twitter-logo"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Twitter SVG code -->
+                    <path
+                      d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                      fill="#1DA1F2"
+                    />
+                  </svg>
                 </div>
-                <!-- Twitter Logo SVG Here -->
-                <svg
-                  class="w-6 h-6 twitter-logo"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <!-- Twitter SVG code -->
-                  <path
-                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
-                    fill="#1DA1F2"
-                  />
-                </svg>
-              </div>
-              <p>
-                "I started with Jenni-who & Jenni-what. But now I can't write
-                without Jenni. I love Jenni AI and am amazed to see how far
-                Jenni has come. Kudos to Jenni.AI team."
-              </p>
-            </div>
+                <p class="text-sm">
+                  "I started with Jenni-who & Jenni-what. But now I can't write
+                  without Jenni. I love Jenni AI and am amazed to see how far
+                  Jenni has come. Kudos to Jenni.AI team."
+                </p>
+              </figcaption>
+            </figure>
           </article>
 
           <!-- Third Testimonial Card -->
-          <article
-            class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
-          >
-            <figure class="w-12 h-12 rounded-full">
+          <article class="p-4 mb-4 bg-white rounded-lg shadow-lg">
+            <figure class="grid grid-cols-[auto_1fr] gap-4">
               <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=1"
                 alt="Mushtaq"
-                class="object-cover w-full h-full rounded-full"
+                class="object-cover w-12 h-12 rounded-full"
               />
-            </figure>
-            <div>
-              <div class="flex items-center justify-between mb-2">
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Mushtaq (@Mushtaq Bilal)</p>
-                  <p class="text-xs text-gray-500">25 Mar</p>
+              <figcaption>
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-2">
+                    <p class="text-xs font-medium">Mushtaq</p>
+                    <p class="text-gray-500">@Mushtaq Bilal . 25 Mar</p>
+                  </div>
+                  <!-- Twitter Logo SVG Here -->
+                  <svg
+                    class="w-4 h-4 twitter-logo"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- Twitter SVG code -->
+                    <path
+                      d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
+                      fill="#1DA1F2"
+                    />
+                  </svg>
                 </div>
-                <!-- Twitter Logo SVG Here -->
-                <svg
-                  class="w-6 h-6 twitter-logo"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <!-- Twitter SVG code -->
-                  <path
-                    d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
-                    fill="#1DA1F2"
-                  />
-                </svg>
-              </div>
-              <p>
-                "Jenni, the AI assistant for academic writing, just got BETTER
-                and SMARTER."
-              </p>
-            </div>
+                <p class="text-sm">
+                  "Jenni, the AI assistant for academic writing, just got BETTER
+                  and SMARTER."
+                </p>
+              </figcaption>
+            </figure>
           </article>
         </div>
 
-        <div class="">
+        <div class="text-xs">
           <!-- First Testimonial Card in Column 2 -->
           <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=5"
                 alt="Gachoki"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Gachoki (@gachoki_munene)</p>
-                  <p class="text-xs text-gray-500">1 Aug</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Gachoki</p>
+                  <p class="text-gray-500">@gachoki_munene . 1 Aug</p>
                 </div>
-                <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -591,12 +583,12 @@
                   />
                 </svg>
               </div>
-              <p>
+              <p class="text-sm">
                 "This one is a game changer, Doc, especially on that small
                 matter of lacking words or writer's block. I am definitely
                 introducing it to my students asap."
               </p>
-            </div>
+            </figcaption>
           </article>
 
           <!-- Second Testimonial Card in Column 2 -->
@@ -604,25 +596,20 @@
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=6"
                 alt="Andy Tom"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">
-                    Andy Tom (@angrytomtweets)
-                  </p>
-                  <p class="text-xs text-gray-500">18 Oct</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Andy Tom</p>
+                  <p class="text-gray-500">@angrytomtweets . 18 Oct</p>
                 </div>
-                <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -633,12 +620,12 @@
                   />
                 </svg>
               </div>
-              <p>
+              <p class="text-sm">
                 "I thought ChatGPT was a good writing assistant. But when I
                 found Jenni AI - It blew my mind. It's 10x more advanced than I
                 thought."
               </p>
-            </div>
+            </figcaption>
           </article>
 
           <!-- Third Testimonial Card in Column 2 -->
@@ -646,23 +633,21 @@
             class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=7"
                 alt="Hason Toor"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Hason Toor (@hasantoxr)</p>
-                  <p class="text-xs text-gray-500">26 Aug</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Hason Toor</p>
+                  <p class="text-gray-500">@hasantoxr . 26 Aug</p>
                 </div>
                 <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -673,56 +658,50 @@
                   />
                 </svg>
               </div>
-              <p>
+              <p class="text-sm">
                 "I thought AI writing was useless. Then I found Jenni AI. It
                 turned out to be much more advanced than I ever could have
                 imagined. Jenni AI = ChatGPT x 10."
               </p>
-            </div>
+            </figcaption>
           </article>
         </div>
 
-        <div class="hidden md:block">
+        <div class="hidden text-xs lg:block">
           <!-- First Testimonial Card in Column 3 -->
           <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=8"
                 alt="Oscar Duran"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">
-                    Oscar Duran (@duranoscarf)
-                  </p>
-                  <p class="text-xs text-gray-500">30 Jul</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Oscar Duran</p>
+                  <p class="text-gray-500">@duranoscarf . 30 Jul</p>
                 </div>
-                <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <!-- Twitter SVG code -->
                   <path
                     d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
                     fill="#1DA1F2"
                   />
                 </svg>
               </div>
-              <p>
+              <p class="text-sm">
                 "Herramienta de auto completado de textos. Usando inteligencia
                 artificial te permite escribir de manera rápida y más eficiente
                 (hay que revisar igual)."
               </p>
-            </div>
+            </figcaption>
           </article>
 
           <!-- Second Testimonial Card in Column 3 -->
@@ -730,38 +709,34 @@
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=9"
                 alt="Rahul"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Rahul (@sairahul1)</p>
-                  <p class="text-xs text-gray-500">28 Jul</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Rahul</p>
+                  <p class="text-gray-500">@sairahul1 . 28 Jul</p>
                 </div>
-                <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <!-- Twitter SVG code -->
                   <path
                     d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
                     fill="#1DA1F2"
                   />
                 </svg>
               </div>
-              <p>
+              <p class="text-sm">
                 "Jenni is perfect for writing research docs, SOPs, study
                 projects presentations 👌"
               </p>
-            </div>
+            </figcaption>
           </article>
 
           <!-- Third Testimonial Card in Column 3 -->
@@ -769,39 +744,39 @@
             class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
-              <!-- Avatar -->
               <img
                 src="https://i.pravatar.cc/150?img=10"
                 alt="Xavier"
                 class="object-cover w-full h-full rounded-full"
               />
             </figure>
-            <div>
+            <figcaption>
               <div class="flex items-center justify-between mb-2">
-                <!-- User Info -->
-                <div class="flex items-center gap-4">
-                  <p class="text-sm font-semibold">Xavier (@xaviercaffrey13)</p>
-                  <p class="text-xs text-gray-500">19 Aug</p>
+                <div class="flex items-center gap-2">
+                  <p class="text-xs font-medium">Xavier</p>
+                  <p class="text-gray-500">@xaviercaffrey13 . 19 Aug</p>
                 </div>
-                <!-- Twitter Logo SVG Here -->
                 <svg
-                  class="w-6 h-6 twitter-logo"
+                  class="w-4 h-4 twitter-logo"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <!-- Twitter SVG code -->
                   <path
                     d="M7.55 22.14c8.3 0 12.84-6.88 12.84-12.84 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 23 5.46a9.03 9.03 0 0 1-2.61.71 4.52 4.52 0 0 0 1.98-2.49 9.1 9.1 0 0 1-2.9 1.1 4.51 4.51 0 0 0-7.7 4.11c-3.77-.18-7.11-2-9.34-4.75a4.5 4.5 0 0 0-.61 2.27c0 1.57.8 2.96 2.01 3.77a4.47 4.47 0 0 1-2.04-.56v.06c0 2.2 1.56 4.03 3.64 4.45a4.5 4.5 0 0 1-2.03.08 4.5 4.5 0 0 0 4.2 3.13 9.07 9.07 0 0 1-5.61 1.93A9.32 9.32 0 0 1 0 19.54a12.86 12.86 0 0 0 6.95 2.03"
                     fill="#1DA1F2"
                   />
                 </svg>
               </div>
-              <p>"Copayi is alright but have you tried @whoisjenniai?"</p>
-            </div>
+              <p class="text-sm">
+                "Copayi is alright but have you tried @whoisjenniai?"
+              </p>
+            </figcaption>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- Team & institutional Plans -->
     <section class="px-6 py-12 bg-blue-900 md:px-8 md:py-16">
       <header
         class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
@@ -817,12 +792,14 @@
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block button focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
           Learn More
         </a>
       </header>
     </section>
+
+    <!-- You're in control -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
@@ -836,7 +813,7 @@
         </p>
       </header>
       <div
-        class="grid max-w-6xl grid-cols-1 gap-2 mx-auto sm:grid-cols-2 md:grid-cols-3"
+        class="grid max-w-5xl grid-cols-1 gap-2 mx-auto sm:grid-cols-2 md:grid-cols-3"
       >
         <div class="grid gap-2 p-4 bg-white place-items-start">
           <div class="p-2 bg-blue-100 rounded-full">
@@ -991,6 +968,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Frequently asked question -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header class="grid px-4 py-12 mx-auto text-center gap-2max-w-4xl">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
@@ -1001,23 +980,23 @@
         </h2>
       </header>
       <main
-        class="relative grid max-w-6xl gap-4 p-4 mx-auto overflow-hidden bg-slate-50"
+        class="relative grid max-w-5xl gap-4 p-4 mx-auto overflow-hidden text-gray-400 bg-slate-50"
       >
         <!-- Accordion item -->
         <div
           x-data="{ expanded: false }"
           class="p-4 bg-white rounded-lg shadow-md"
         >
-          <h2>
+          <h3>
             <button
               id="faqs-title-01"
               type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              class="flex items-center justify-between w-full py-2 text-lg text-left"
               @click="expanded = !expanded"
               :aria-expanded="expanded"
               aria-controls="faqs-text-01"
             >
-              <span>What are the advantages of your service?</span>
+              <span>Does Jenni use GPT-4?</span>
               <svg
                 class="ml-8 fill-indigo-500 shrink-0"
                 width="16"
@@ -1042,7 +1021,7 @@
                 />
               </svg>
             </button>
-          </h2>
+          </h3>
           <div
             id="faqs-text-01"
             role="region"
@@ -1051,11 +1030,9 @@
             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
           >
             <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
+              <p class="py-3 text-gray-400">
+                Yes, we use the latest AI models. Some Product features take
+                advantage of GPT-4's capabilities
               </p>
             </div>
           </div>
@@ -1065,19 +1042,16 @@
           x-data="{ expanded: false }"
           class="p-4 bg-white rounded-lg shadow-md"
         >
-          <h2>
+          <h3>
             <button
               id="faqs-title-02"
               type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              class="flex items-center justify-between w-full py-2 text-lg text-left"
               @click="expanded = !expanded"
               :aria-expanded="expanded"
               aria-controls="faqs-text-02"
             >
-              <span
-                >Are there any fees or commissions in addition to the monthly
-                subscription?</span
-              >
+              <span>What are Citations</span>
               <svg
                 class="ml-8 fill-indigo-500 shrink-0"
                 width="16"
@@ -1102,7 +1076,7 @@
                 />
               </svg>
             </button>
-          </h2>
+          </h3>
           <div
             id="faqs-text-02"
             role="region"
@@ -1111,11 +1085,11 @@
             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
           >
             <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
+              <p class="py-3 text-gray-400">
+                Citations show the source of a chunk of text. When writing a
+                research paper or essay, citations show the reader where a
+                statement is from. Jenni automatically generates citations for
+                you as you are writing.
               </p>
             </div>
           </div>
@@ -1125,16 +1099,16 @@
           x-data="{ expanded: false }"
           class="p-4 bg-white rounded-lg shadow-md"
         >
-          <h2>
+          <h3>
             <button
               id="faqs-title-03"
               type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              class="flex items-center justify-between w-full py-2 text-lg text-left"
               @click="expanded = !expanded"
               :aria-expanded="expanded"
               aria-controls="faqs-text-03"
             >
-              <span>You really don't charge per user? Why not?</span>
+              <span>Is Jenni multilingual</span>
               <svg
                 class="ml-8 fill-indigo-500 shrink-0"
                 width="16"
@@ -1159,7 +1133,7 @@
                 />
               </svg>
             </button>
-          </h2>
+          </h3>
           <div
             id="faqs-text-03"
             role="region"
@@ -1168,11 +1142,9 @@
             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
           >
             <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
+              <p class="py-3 text-gray-400">
+                Yes, you may generate text in your desired language and use our
+                translate feature to switch bewteen languages.
               </p>
             </div>
           </div>
@@ -1182,16 +1154,16 @@
           x-data="{ expanded: false }"
           class="p-4 bg-white rounded-lg shadow-md"
         >
-          <h2>
+          <h3>
             <button
               id="faqs-title-04"
               type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              class="flex items-center justify-between w-full py-2 text-lg text-left"
               @click="expanded = !expanded"
               :aria-expanded="expanded"
               aria-controls="faqs-text-04"
             >
-              <span>What happens when I go over my monthly active limit?</span>
+              <span>Is there mobile support</span>
               <svg
                 class="ml-8 fill-indigo-500 shrink-0"
                 width="16"
@@ -1216,7 +1188,7 @@
                 />
               </svg>
             </button>
-          </h2>
+          </h3>
           <div
             id="faqs-text-04"
             role="region"
@@ -1225,11 +1197,8 @@
             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
           >
             <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
+              <p class="py-3 text-gray-400">
+                Currently, Jenni is only available on desktop.
               </p>
             </div>
           </div>
@@ -1239,19 +1208,16 @@
           x-data="{ expanded: false }"
           class="p-4 bg-white rounded-lg shadow-md"
         >
-          <h2>
+          <h3>
             <button
               id="faqs-title-05"
               type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
+              class="flex items-center justify-between w-full py-2 text-lg text-left"
               @click="expanded = !expanded"
               :aria-expanded="expanded"
               aria-controls="faqs-text-05"
             >
-              <span
-                >Can your service help me understand how to work with my
-                product?</span
-              >
+              <span>Does Jenni plagiarize</span>
               <svg
                 class="ml-8 fill-indigo-500 shrink-0"
                 width="16"
@@ -1276,7 +1242,7 @@
                 />
               </svg>
             </button>
-          </h2>
+          </h3>
           <div
             id="faqs-text-05"
             role="region"
@@ -1285,134 +1251,20 @@
             :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
           >
             <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Accordion item -->
-        <div
-          x-data="{ expanded: false }"
-          class="p-4 bg-white rounded-lg shadow-md"
-        >
-          <h2>
-            <button
-              id="faqs-title-06"
-              type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
-              @click="expanded = !expanded"
-              :aria-expanded="expanded"
-              aria-controls="faqs-text-06"
-            >
-              <span>Which third-party application do you integrate with?</span>
-              <svg
-                class="ml-8 fill-indigo-500 shrink-0"
-                width="16"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  y="7"
-                  width="16"
-                  height="2"
-                  rx="1"
-                  class="transition duration-200 ease-out origin-center transform"
-                  :class="{'!rotate-180': expanded}"
-                />
-                <rect
-                  y="7"
-                  width="16"
-                  height="2"
-                  rx="1"
-                  class="transition duration-200 ease-out origin-center transform rotate-90"
-                  :class="{'!rotate-180': expanded}"
-                />
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="faqs-text-06"
-            role="region"
-            aria-labelledby="faqs-title-06"
-            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
-            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-          >
-            <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Accordion item -->
-        <div
-          x-data="{ expanded: false }"
-          class="p-4 bg-white rounded-lg shadow-md"
-        >
-          <h2>
-            <button
-              id="faqs-title-07"
-              type="button"
-              class="flex items-center justify-between w-full py-2 font-semibold text-left"
-              @click="expanded = !expanded"
-              :aria-expanded="expanded"
-              aria-controls="faqs-text-07"
-            >
-              <span>I have another question!</span>
-              <svg
-                class="ml-8 fill-indigo-500 shrink-0"
-                width="16"
-                height="16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  y="7"
-                  width="16"
-                  height="2"
-                  rx="1"
-                  class="transition duration-200 ease-out origin-center transform"
-                  :class="{'!rotate-180': expanded}"
-                />
-                <rect
-                  y="7"
-                  width="16"
-                  height="2"
-                  rx="1"
-                  class="transition duration-200 ease-out origin-center transform rotate-90"
-                  :class="{'!rotate-180': expanded}"
-                />
-              </svg>
-            </button>
-          </h2>
-          <div
-            id="faqs-text-07"
-            role="region"
-            aria-labelledby="faqs-title-07"
-            class="grid overflow-hidden text-sm transition-all duration-300 ease-in-out text-slate-600"
-            :class="expanded ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'"
-          >
-            <div class="overflow-hidden">
-              <p class="pb-3">
-                If you go over your organisations or user limit, a member of the
-                team will reach out about bespoke pricing. In the meantime, our
-                collaborative features won't appear in accounts or users that
-                are over the 100-account or 1,000-user limit.
+              <p class="py-3 text-gray-400">
+                Jenni strives to generate content that is 100% plagiarism-free.
+                However, occasionally there may be sentences that Jenni writes
+                that also happen to be on the web.
               </p>
             </div>
           </div>
         </div>
       </main>
     </section>
+    <!-- Try Jenni for free today -->
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
       <header
-        class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
+        class="grid max-w-4xl gap-4 px-4 py-12 mx-auto text-center place-items-center"
       >
         <h2 class="text-4xl md:text-[3.375rem] font-garamond text-gray-900">
           Try Jenni for free today
@@ -1422,14 +1274,14 @@
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block mt-4 button ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
           Start writing <span>- it's free</span>
         </a>
       </header>
     </section>
     <footer class="p-10 text-white bg-black">
-      <div class="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
+      <div class="grid max-w-5xl grid-cols-1 gap-8 mx-auto md:grid-cols-4">
         <section>
           <h4 class="mb-4 text-4xl font-black">jenni</h4>
           <p class="w-[22ch]">Supercharge your next research paper</p>

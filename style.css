@@ -5,6 +5,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer components {
+  .button {
+    @apply px-4 py-2 text-2xl font-medium *:text-lg *:text-gray-300 text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-800;
+  }
+}
+
 .avatars {
   display: grid;
   grid-template-columns: repeat(3, calc(1.75rem / 1.2));
