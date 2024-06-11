@@ -23,7 +23,7 @@
     ></script>
     <title>Vite App</title>
   </head>
-  <body>
+  <body class="font-inter">
     <nav
       class="fixed top-0 z-50 w-full bg-white shadow-lg"
       x-data="{ isOpen: false }"
@@ -42,7 +42,7 @@
               <li>
                 <a
                   href="#"
-                  class="px-2 py-4 font-semibold text-gray-500"
+                  class="px-2 py-4 font-medium text-gray-500"
                   role="menuitem"
                   >Pricing</a
                 >
@@ -50,7 +50,7 @@
               <li>
                 <a
                   href="#"
-                  class="px-2 py-4 font-semibold text-gray-500"
+                  class="px-2 py-4 font-medium text-gray-500"
                   role="menuitem"
                   >About</a
                 >
@@ -58,7 +58,7 @@
               <li>
                 <a
                   href="#"
-                  class="px-2 py-4 font-semibold text-gray-500"
+                  class="px-2 py-4 font-medium text-gray-500"
                   role="menuitem"
                   >Blog</a
                 >
@@ -71,7 +71,7 @@
               <li>
                 <a
                   href="#"
-                  class="hidden px-2 py-4 font-semibold text-gray-500 lg:block"
+                  class="hidden px-2 py-4 font-medium text-gray-500 lg:block"
                   role="menuitem"
                   >Login</a
                 >
@@ -79,7 +79,7 @@
               <li>
                 <a
                   href="#"
-                  class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400"
+                  class="px-2 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400"
                   role="menuitem"
                   >Start Writing</a
                 >
@@ -97,7 +97,7 @@
             >
             <button
               class="outline-none mobile-menu-button"
-              aria-label="Open menu"
+              :aria-label="isOpen ? 'Close Menu' : 'Open Menu'"
               @click="isOpen = !isOpen"
               :aria-expanded="isOpen.toString()"
               aria-controls="mobile-menu"
@@ -190,7 +190,9 @@
       <div
         class="max-w-6xl px-4 py-[5rem] mx-auto text-center md:px-8 md:py-[7rem] md:pb-12"
       >
-        <h1 class="mb-4 text-5xl font-bold md:text-6xl lg:text-7xl">
+        <h1
+          class="mb-6 max-w-4xl mx-auto text-[3.5rem] leading-[61.6px] font-garamond md:text-6xl lg:text-[8ch]"
+        >
           Supercharge Your Next Research Paper
         </h1>
         <p class="max-w-3xl mx-auto mb-6 text-xl text-gray-600 md:text-2xl">
@@ -199,9 +201,9 @@
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
-          Start writing - it's free
+          Start writing <span>- it's free</span>
         </a>
         <div class="flex items-center justify-center mt-4 space-x-8">
           <div class="avatars">
@@ -228,7 +230,7 @@
             </div>
           </div>
 
-          <p class="text-sm text-left text-gray-500 md:text-base">
+          <p class="text-sm text-left text-gray-500">
             Loved by over 3 million academics
           </p>
         </div>
@@ -253,180 +255,10 @@
     <section class="px-6 py-12 bg-white md:px-8 md:py-16">
       <p
         id="trustees"
-        class="mb-6 text-lg text-center text-gray-600 md:text-xl"
+        class="mb-6 text-lg text-center text-gray-600 text-balance"
       >
         Trusted by Universities and businesses across the world
       </p>
-      <!-- <div
-        class="marquee"
-        aria-live="off"
-        role="marquee"
-        aria-labelledby="trustees"
-      >
-        <img
-          decoding="async"
-          sizes="132.5px"
-          srcset="
-            https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png?scale-down-to=512 512w,
-            https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png                   600w
-          "
-          src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
-          alt="google logo"
-          style="
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            object-position: center;
-            object-fit: cover;
-            image-rendering: auto;
-          "
-        />
-        <img
-          decoding="async"
-          sizes="145.1497px"
-          srcset="
-            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png?scale-down-to=512   512w,
-            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png?scale-down-to=1024 1024w,
-            https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png                    1600w
-          "
-          src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
-          alt="penn logo"
-          style="
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            object-position: center;
-            object-fit: cover;
-            image-rendering: auto;
-          "
-        />
-        <img
-          decoding="async"
-          sizes="190px"
-          srcset="
-            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=512   512w,
-            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=1024 1024w,
-            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=2048 2048w,
-            https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png                    3000w
-          "
-          src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png?scale-down-to=2048"
-          alt="cambridge university"
-          style="
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            object-position: center;
-            object-fit: cover;
-            image-rendering: auto;
-          "
-        />
-        <img
-          decoding="async"
-          sizes="77px"
-          srcset="
-            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=512   512w,
-            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=1024 1024w,
-            https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png                    1280w
-          "
-          src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png?scale-down-to=1024"
-          alt="MIT logo"
-          style="
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            object-position: center;
-            object-fit: cover;
-            image-rendering: auto;
-          "
-        />
-        <img
-          decoding="async"
-          sizes="153px"
-          srcset="
-            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png?scale-down-to=512   512w,
-            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png?scale-down-to=1024 1024w,
-            https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png                    1258w
-          "
-          src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
-          alt="aston university logo"
-          style="
-            display: block;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            object-position: center;
-            object-fit: cover;
-            image-rendering: auto;
-          "
-        />
-        <div
-          class="marquee-content"
-          aria-label="Trusted by universities and businesses across the world"
-        >
-          // Repeat the sequence of images twice to ensure a smooth looping 
-          <img
-            src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
-            alt="google logo"
-            class="filter grayscale"
-          />
-          <img
-            src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
-            alt="penn logo"
-            class="filter grayscale"
-          />
-          <img
-            src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png"
-            alt="cambridge university"
-            class="filter grayscale"
-          />
-          <img
-            src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png"
-            alt="MIT logo"
-            class="filter grayscale"
-          />
-          <img
-            src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
-            alt="aston university logo"
-            class="filter grayscale"
-          />
-          // Repeat start 
-          <img
-            src="https://framerusercontent.com/images/79iSrar3pZ8D5WjYaEC4uTIT178.png"
-            alt="google logo"
-            class="filter grayscale"
-            aria-hidden="true"
-          />
-          <img
-            src="https://framerusercontent.com/images/NgsXWJDxOzfsfprwJeyVm4DE.png"
-            alt="penn logo"
-            class="filter grayscale"
-            aria-hidden="true"
-          />
-          <img
-            src="https://framerusercontent.com/images/uVMTMxwbEYpuQkdpldGB4rLbziE.png"
-            alt="cambridge university"
-            class="filter grayscale"
-            aria-hidden="true"
-          />
-          <img
-            src="https://framerusercontent.com/images/W4yFLitUltduwIFn8qdixSUYp2g.png"
-            alt="MIT logo"
-            class="filter grayscale"
-            aria-hidden="true"
-          />
-          <img
-            src="https://framerusercontent.com/images/yWg37aAdauOgDNSZRD3zlm8mMY.png"
-            alt="aston university logo"
-            class="filter grayscale"
-            aria-hidden="true"
-          />
-          //Repeat end 
-        </div>
-      </div> -->
       <div
         class="scroller | w-full 2xl:max-w-6xl px-4 mx-auto text-center md:px-8"
         data-speed="fast"
@@ -465,14 +297,14 @@
     </section>
 
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           Powerful Features
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+        <h2 class="text-4xl md:text-[3.375rem] text-gray-900 font-garamond">
           Write, cite, and edit
-        </h1>
-        <p class="mt-2 text-lg text-gray-600">
+        </h2>
+        <p class="text-xl text-gray-600 text-pretty">
           Features built to enhance your research and writing capabilities
         </p>
       </header>
@@ -484,79 +316,83 @@
         >
           <!-- Feature 1 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">In-text Citations</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">In-text Citations</h3>
+            <p class="text-lg text-gray-200">
               Jenni consults the latest research and your PDF uploads. Cite in
               APA, MLA, IEEE, Chicago, or Harvard style
             </p>
           </div>
           <!-- Feature 2 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">AI Autocomplete</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">AI Autocomplete</h3>
+            <p class="text-lg text-gray-200">
               Autocomplete will write alongside you to beat writer's block
               whenever you need a helping hand
             </p>
           </div>
           <!-- Feature 3 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Chat to Your Research</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">Chat to Your Research</h3>
+            <p class="text-lg text-gray-200">
               Quickly understand and summarize your research papers with our AI
               chat assistant
             </p>
           </div>
           <!-- Feature 4 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Generate From Your Files</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">
+              Generate From Your Files
+            </h3>
+            <p class="text-lg text-gray-200">
               Bring your research papers to life with source-based generation
             </p>
           </div>
           <!-- Feature 5 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Paraphrase & Rewrite</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">Paraphrase & Rewrite</h3>
+            <p class="text-lg text-gray-200">
               Paraphrase any text in any tone. Rewrite the internet customized
               to you
             </p>
           </div>
           <!-- Feature 6 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Bulk Import Sources via .bib</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">
+              Bulk Import Sources via .bib
+            </h3>
+            <p class="text-lg text-gray-200">
               Already saved papers ready to cite? Import a .bib to populate your
               library in seconds
             </p>
           </div>
           <!-- Feature 7 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">LaTeX and Word Export</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">LaTeX and Word Export</h3>
+            <p class="text-lg text-gray-200">
               Export your draft to LaTeX, .docx, or HTML without any formatting
               loss
             </p>
           </div>
           <!-- Feature 7 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Outline Builder</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">Outline Builder</h3>
+            <p class="text-lg text-gray-200">
               Enter your prompt and get a list of section headings ready for you
               to flesh out
             </p>
           </div>
           <!-- Feature 8 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Multilingual Support</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">Multilingual Support</h3>
+            <p class="text-lg text-gray-200">
               Jenni can generate in US or British English, Spanish, German,
               French, or Chinese
             </p>
           </div>
           <!-- Feature 9 -->
           <div class="py-4">
-            <h2 class="mb-2 text-lg font-bold">Research Library</h2>
-            <p class="text-gray-200">
+            <h3 class="mb-2 text-3xl font-garamond">Research Library</h3>
+            <p class="text-lg text-gray-200">
               Save and manage research in your library. Easily cite research in
               any document, fast
             </p>
@@ -565,20 +401,24 @@
       </div>
     </section>
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header
+        class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
+      >
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           AI ASSISTANT
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">Never Write Alone</h1>
-        <p class="mt-2 text-lg text-gray-600">
+        <h2 class="text-4xl md:text-[3.375rem] font-garamond text-gray-900">
+          Never Write Alone
+        </h2>
+        <p class="text-lg text-gray-600 text-pretty">
           Get suggestions whenever you are stuck or expand your notes into full
           paragraphs
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block px-6 py-2 mt-4 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
-          Start writing - it's free
+          Start writing <span>- it's free</span>
         </a>
       </header>
 
@@ -587,14 +427,14 @@
       </figure>
     </section>
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           CUSTOMER LOVE
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+        <h2 class="text-4xl md:text-[3.375rem] text-gray-900 font-garamond">
           Join 3 million empowered writers
-        </h1>
-        <p class="mt-2 text-lg text-gray-600">
+        </h2>
+        <p class="text-lg text-gray-600">
           Jenni has helped write over 970 million words. From academic essays,
           journals, to top-ranking blog posts
         </p>
@@ -604,7 +444,7 @@
       >
         <div class="">
           <!-- First Testimonial Card -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -638,10 +478,10 @@
                 "A major shoutout to Jenni AI for straight up saving my life ❤"
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Second Testimonial Card -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -677,10 +517,10 @@
                 Jenni has come. Kudos to Jenni.AI team."
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Third Testimonial Card -->
-          <div
+          <article
             class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -715,12 +555,12 @@
                 and SMARTER."
               </p>
             </div>
-          </div>
+          </article>
         </div>
 
         <div class="">
           <!-- First Testimonial Card in Column 2 -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -757,10 +597,10 @@
                 introducing it to my students asap."
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Second Testimonial Card in Column 2 -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -799,10 +639,10 @@
                 thought."
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Third Testimonial Card in Column 2 -->
-          <div
+          <article
             class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -839,12 +679,12 @@
                 imagined. Jenni AI = ChatGPT x 10."
               </p>
             </div>
-          </div>
+          </article>
         </div>
 
         <div class="hidden md:block">
           <!-- First Testimonial Card in Column 3 -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -883,10 +723,10 @@
                 (hay que revisar igual)."
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Second Testimonial Card in Column 3 -->
-          <div
+          <article
             class="mb-4 grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -922,10 +762,10 @@
                 projects presentations 👌"
               </p>
             </div>
-          </div>
+          </article>
 
           <!-- Third Testimonial Card in Column 3 -->
-          <div
+          <article
             class="grid grid-cols-[auto_1fr] gap-4 rounded-lg bg-white p-4 shadow-lg"
           >
             <figure class="w-12 h-12 rounded-full">
@@ -958,36 +798,40 @@
               </div>
               <p>"Copayi is alright but have you tried @whoisjenniai?"</p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
     <section class="px-6 py-12 bg-blue-900 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header
+        class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
+      >
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           FOR TEAMS
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+        <h2 class="text-4xl md:text-[3.375rem] text-gray-900 font-garamond">
           Team & institutional plans
-        </h1>
-        <p class="mt-2 text-lg text-gray-600">
+        </h2>
+        <p class="text-lg text-gray-600">
           Collaborate with your research team and speed up your workflow.
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
           Learn More
         </a>
       </header>
     </section>
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           USE CASES
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">You're in control</h1>
-        <p class="mt-2 text-lg text-gray-600">
+        <h2 class="text-4xl md:text-[3.375rem] text-gray-900 font-garamond">
+          You're in control
+        </h2>
+        <p class="text-lg text-gray-600">
           Types of content Jenni can help you with
         </p>
       </header>
@@ -1148,13 +992,13 @@
       </div>
     </section>
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
+      <header class="grid px-4 py-12 mx-auto text-center gap-2max-w-4xl">
         <p class="text-sm font-semibold tracking-wider text-blue-500 uppercase">
           SUPPORT
         </p>
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+        <h2 class="text-4xl md:text-[3.375rem] font-garamond text-gray-900">
           Frequently asked questions
-        </h1>
+        </h2>
       </header>
       <main
         class="relative grid max-w-6xl gap-4 p-4 mx-auto overflow-hidden bg-slate-50"
@@ -1567,35 +1411,39 @@
       </main>
     </section>
     <section class="px-6 py-12 bg-gray-50 md:px-8 md:py-16">
-      <header class="max-w-4xl px-4 py-12 mx-auto text-center">
-        <h1 class="mt-2 text-4xl font-bold text-gray-900">
+      <header
+        class="grid max-w-4xl gap-2 px-4 py-12 mx-auto text-center place-items-center"
+      >
+        <h2 class="text-4xl md:text-[3.375rem] font-garamond text-gray-900">
           Try Jenni for free today
-        </h1>
-        <p class="mt-2 text-lg text-gray-600">
+        </h2>
+        <p class="text-lg text-gray-600">
           Write your first paper with Jenni today and never look back
         </p>
         <a
           href="#"
-          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          class="inline-block px-6 py-2 font-medium text-white transition duration-300 bg-blue-700 rounded-lg hover:bg-blue-400 ring-2 ring-blue-300 hover:ring-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
-          Start writing - it's free
+          Start writing <span>- it's free</span>
         </a>
       </header>
     </section>
-    <footer class="p-10">
+    <footer class="p-10 text-white bg-black">
       <div class="grid grid-cols-1 gap-8 mx-auto max-w-7xl md:grid-cols-4">
-        <div>
-          <h2 class="mb-4 text-lg font-bold">jenni</h2>
-          <p>Supercharge your next research paper</p>
+        <section>
+          <h4 class="mb-4 text-4xl font-black">jenni</h4>
+          <p class="w-[22ch]">Supercharge your next research paper</p>
           <button
             class="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
           >
             Start writing
           </button>
-        </div>
-        <div>
-          <h3 class="mb-3 text-sm font-semibold uppercase">Use Cases</h3>
-          <ul class="space-y-2">
+        </section>
+        <section aria-labelledby="footer-heading-use-cases">
+          <h5 id="footer-heading-use-cases" class="mb-3 font-bold uppercase">
+            Use Cases
+          </h5>
+          <ul class="space-y-2 text-sm font-medium text-gray-400">
             <li>Team Plans</li>
             <li>AI Essay Writer</li>
             <li>Essay Expander</li>
@@ -1608,22 +1456,24 @@
             <li>Literature Review Generator</li>
             <li>Thesis Statement Generator</li>
           </ul>
-        </div>
-        <div>
-          <h3 class="mb-3 text-sm font-semibold uppercase">Company</h3>
-          <ul class="space-y-2">
+        </section>
+        <section aria-labelledby="footer-heading-company">
+          <h5 id="footer-heading-company" class="mb-3 font-bold uppercase">
+            Company
+          </h5>
+          <ul class="space-y-2 text-sm font-medium text-gray-400">
             <li>Careers</li>
             <li>Influencer program</li>
           </ul>
-        </div>
-        <div>
-          <h3 class="mb-3 text-sm font-semibold uppercase">Legal</h3>
-          <ul class="space-y-2">
+        </section>
+        <section aria-labelledby="footer-heading-legal">
+          <h5 id="aria-labelledby" class="mb-3 font-bold uppercase">Legal</h5>
+          <ul class="space-y-2 text-sm font-medium text-gray-400">
             <li>Terms of Service</li>
             <li>Privacy Policy</li>
             <li>Refund Policy</li>
           </ul>
-        </div>
+        </section>
       </div>
       <div class="mt-10 text-center text-gray-400">
         <p>Copyright © 2024 Altum Inc. All rights reserved.</p>

@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
 .avatars {
   display: grid;
-  grid-template-columns: repeat(3, calc(1.75rem / 1.5));
+  grid-template-columns: repeat(3, calc(1.75rem / 1.2));
 }
 
 .scroller {
